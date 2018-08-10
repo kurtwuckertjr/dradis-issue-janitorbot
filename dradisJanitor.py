@@ -8,6 +8,8 @@ import time
 import datetime
 import re
 
+# Remove bad XML characters from Dradis issues and evidence
+
 class janitorScript(object):
     def __init__(self):
         self.arg = self.parse_args()
