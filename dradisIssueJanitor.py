@@ -30,19 +30,14 @@ class IssueJanitorScript(object):
         return 0
 
     def stripTrash(self, dirtyText: str):
-        sanitizedText = dirtyText.replace('"','&quot;').replace("'","&apos;").replace("<","&lt;").replace(">","&gt;").replace("&","&amp;")
+        sanitizedText = dirtyText.replace('"','&quot;').replace("'","&apos;").replace("<","&lt;").replace(">","&gt;").replace("&","&amp;").replace("\r\n  "," ").replace("URL:","")
         return sanitizedText
 
     def issueCleaner(self, projectId):
         # Remove bad XML characters from Dradis issues
         today = str(datetime.datetime.now())
-        newCveSite = 'https://cvedetails.com/cve/'
-        refPattern = re.compile(r'References')
-        cvePattern = re.compile(r'CVE_ID')
-        cwePattern = re.compile(r'CWE_ID')
         modulePattern = re.compile(r'Module_OTGv4')
         touchedByPattern = re.compile(r'Touched_By')
-
         issueList = self.dradisSession.get_issuelist(pid=projectId)
 
         # Loop over every primary issue (highest level JSON object) in the dict containing all Dradis issues
@@ -53,8 +48,6 @@ class IssueJanitorScript(object):
             sanitizedFields = []
             # Loop over every field and value within each Dradis issue
             issueTitle = issueModules = issueText = frankenstein = '' 
-            cweField = '\r\n#[CWE_ID]#\r\n'
-            cveField = '\r\n#[CVE_ID]#\r\n'
             endOfIssue = realEndOfIssue = 0
             for key, value in issue.items():
                 # Storing current issue title, for debugging
@@ -100,7 +93,7 @@ class IssueJanitorScript(object):
             sanitizedIssueText = ''.join(str(listEntry) for listEntry in sanitizedFields)
 
             # This is the only way to do PUT or POST requests with Dradis API
-            data = {'issue': {"text": sanitizedIssueText}}
+            data = {'text': sanitizedIssueText}
             issueUpdate = self.dradisSession.update_issue_raw(pid=projectId, issue_id=issueId, data=data)
         return
 
