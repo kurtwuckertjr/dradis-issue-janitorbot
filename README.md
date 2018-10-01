@@ -1,4 +1,4 @@
-## About dradis-issue-janitorbot
+# About dradis-issue-janitorbot
 Script for removing bad characters from Dradis issues and evidence that might break report generation. Two scripts are provided: one for issues, one for evidence.
 
 ## Installation
