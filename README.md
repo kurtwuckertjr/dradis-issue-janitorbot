@@ -12,6 +12,7 @@ PyDradis3: https://github.com/GoVanguard/pydradis3 (also in PyPi)
 
 ## Usage
 ```python dradisIssueJanitor.py <dradis_URL> <project_ID> <API_token>```
+
 ```python dradisEvidenceJanitor.py <dradis_URL> <project_ID> <API_token>```
 
 ## License
