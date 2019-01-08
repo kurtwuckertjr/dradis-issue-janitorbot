@@ -1,4 +1,10 @@
-# dradis-issue-janitorbot
+Dradis-Issue-JanitorBot (https://govanguard.io)
+==
+[![Build Status](https://travis-ci.com/GoVanguard/dradis-issue-janitorbot.svg?branch=master)](https://travis-ci.com/GoVanguard/dradis-issue-janitorbot)
+[![Known Vulnerabilities](https://snyk.io/test/github/GoVanguard/dradis-issue-janitorbot/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/GoVanguard/dradis-issue-janitorbot?targetFile=requirements.txt)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c13411c956ec363b3f89/maintainability)](https://codeclimate.com/github/GoVanguard/dradis-issue-janitorbot/maintainability)
+
+# About dradis-issue-janitorbot
 Script for removing bad characters from Dradis issues and evidence that might break report generation. Two scripts are provided: one for issues, one for evidence.
 
 ## Installation
