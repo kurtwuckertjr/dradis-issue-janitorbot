@@ -1,4 +1,4 @@
-Dradis-Issue-JanitorBot (https://govanguard.io)
+Dradis-Issue-JanitorBot (https://govanguard.com)
 ==
 [![Build Status](https://travis-ci.com/GoVanguard/dradis-issue-janitorbot.svg?branch=master)](https://travis-ci.com/GoVanguard/dradis-issue-janitorbot)
 [![Known Vulnerabilities](https://snyk.io/test/github/GoVanguard/dradis-issue-janitorbot/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/GoVanguard/dradis-issue-janitorbot?targetFile=requirements.txt)
